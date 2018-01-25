@@ -1,0 +1,62 @@
+
+
+<table>
+  <tr>
+    <td>
+      <div style="margin-left: 40%; margin-top: 10%" >
+        <canvas
+          style="margin: 0; padding: 0; position: relative; top: 50px;"
+          #canvas on-click="drawOnClick($event)" width="320" height="320">
+        </canvas>
+      </div>
+    </td>
+    <td >
+      <table style="margin-left: 10%; margin-top: 10%">
+        <tr >Выберите X:</tr>
+        <tr>
+          <td>
+            <mat-slider style="width: 100%; margin-top: 2%; margin-bottom: 15%" min="-3" max="5" step="0.5" value="0" [(ngModel)]="point.xValue"></mat-slider>
+          </td>
+          <td>
+            <i> X = {{point.xValue}}</i>
+          </td>
+        </tr>
+        <tr>Введите значение Y:</tr>
+        <tr>
+          <td>
+            <input pInputText id="inputY" style="margin-top: 2%; margin-bottom: 15%" type="number" value="0" [min]="-3" [max]="3" [(ngModel)]="point.yValue"/>
+          </td>
+          <td>
+            <i id="inputError" style="visibility: hidden"> Неверно введено значение. Y задается от -3 до 3</i>
+          </td>
+        </tr>
+        <tr>Выберите R:</tr>
+        <tr>
+          <td>
+            <mat-slider style="width: 100%; margin-top: 2%; margin-bottom: 15%" min="-3" max="5" step="0.5" value="2" [(ngModel)]="point.rValue"></mat-slider>
+          </td>
+          <td>
+            <i> R = {{point.rValue}}</i>
+          </td>
+        </tr>
+        <tr>
+          <button pButton label="Проверить"></button>
+          <button pButton id="clearButton" style="visibility: hidden" label="Очистить таблицу"></button>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div>
+
+</div>
+<table id="resultTable" style="border-collapse: collapse; visibility: hidden;
+    width: 400px; text-align: center; margin-top: 5%; margin-left: 5%">
+  <tr>
+    <td style=" padding: 10px; border: 1px solid black">X:</td>
+    <td style=" padding: 10px; border: 1px solid black">Y:</td>
+    <td style=" padding: 10px; border: 1px solid black">R:</td>
+    <td style=" padding: 10px; border: 1px solid black">Попадание:</td>
+  </tr>
+</table>
